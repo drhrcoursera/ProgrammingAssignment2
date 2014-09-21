@@ -19,7 +19,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## This function performs a cache lookup and store, as well as computes the matrix inversion.
+## This function performs a cache lookup and store, and computes the matrix inversion.
 
 cacheSolve <- function(x, ...) {
   m <- x$getinverse()
@@ -28,7 +28,7 @@ cacheSolve <- function(x, ...) {
     return(m)
   }
   data <- x$get()
-  m <- solve(data)
+  m <- solve(data, ...)
   x$setinverse(m)
   m
 }
